@@ -5,7 +5,8 @@ permissions:
 
 on:
   schedule:
-    - cron: "0 0 * * *" # every day
+    # 每 6 小时从上游 cmliu/edgetunnel 同步一次（仅更新 GitHub 仓库，不触发 CF 部署）
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:
