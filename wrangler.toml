@@ -1,8 +1,19 @@
-name = "v20251104"
+name = "edgetunnel-cf-chihuo"
 main = "_worker.js"
 compatibility_date = "2025-11-04"
 keep_vars = true
+workers_dev = false
 
-#[[kv_namespaces]]
-#binding = "KV"			#KV绑定名默认不可修改
-#id = ""				#KV数据库id
+# 自定义域：cf.chihuo.fun（主域 chihuo.fun 已在 Cloudflare 托管）
+[[routes]]
+pattern = "cf.chihuo.fun"
+custom_domain = true
+
+[vars]
+HOST = "cf.chihuo.fun"
+
+# KV 命名空间由 scripts/deploy.sh 首次部署时自动创建并写入 id
+# 如需手动配置，取消注释并填入 id：
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "<your-kv-namespace-id>"

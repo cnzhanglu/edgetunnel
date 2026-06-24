@@ -30,6 +30,7 @@ wrangler-install.log
 .env
 .env.local
 .env.*.local
+.dev.vars
 
 # 日志文件
 *.log
